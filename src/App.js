@@ -1,6 +1,7 @@
 import "./App.css";
 import me from "./images/06.jpeg";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -40,7 +41,7 @@ function App() {
           <img alt="Bagaskara" src={me}></img>
         </div>
       </section>
-      <section className="project is-flex align-center is-padding-block ">
+      <section className="project is-flex align-center is-padding-block">
         <div className="is-margin is-text-left">
           <h2>My Projects</h2>
           <button className="button-primary is-padding is-smallest-rounded">
@@ -62,6 +63,7 @@ function App() {
           </div>
         </div>
       </section>
+      <Footer></Footer>
     </div>
   );
 }

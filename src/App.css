@@ -53,8 +53,8 @@ body {
   background-color: var(--color-first);
 }
 
-p{
-  margin-block:0.375rem;
+p {
+  margin-block: 0.375rem;
 }
 
 .navbar {
@@ -102,6 +102,7 @@ a {
 
 .is-null {
   padding: 0;
+  margin: 0;
 }
 
 .is-flex {
@@ -138,6 +139,10 @@ a:not(.logo):active {
   border: 1px solid var(--color-black);
 }
 
+.is-border-white{
+  border: 1px solid var(--color-first);
+}
+
 .is-margin {
   margin-inline: 10rem;
 }
@@ -169,7 +174,9 @@ a:not(.logo):active {
 .navbar .chat:hover,
 .home h1 span,
 .button-primary,
-.button-secondary {
+.button-secondary,
+.project,
+.Footer {
   color: var(--color-first);
 }
 
@@ -186,7 +193,7 @@ a:not(.logo):active {
   border-bottom: 1px solid var(--color-fourth);
 }
 
-.is-border-bottom-black{
+.is-border-bottom-black {
   border-bottom: 2px solid #404040;
 }
 
@@ -202,7 +209,6 @@ a:not(.logo):active {
 }
 
 .home h1 span {
-  background-color: var(--color-black);
   margin-bottom: 1rem;
 }
 
@@ -249,7 +255,13 @@ a:not(.logo):active {
   margin-block: 3rem;
 }
 
-.project {
+.Footer,
+.project,
+.home h1 span {
   background-color: var(--color-black);
-  color: var(--color-first);
+}
+
+.Footer .logo{
+  filter: invert(1);
+  width: 5rem;
 }
