@@ -1,5 +1,4 @@
 import React from "react";
-// import logo from "../images/logo.png";
 
 const Navbar = () => {
   return (
@@ -21,7 +20,9 @@ const Navbar = () => {
           <a href="#home">Work</a>
         </li>
       </ul>
-      <a className="chat is-border is-padding" href="#home">Let's chat</a>
+      <a className="chat is-border is-padding is-smallest-rounded" href="#home">
+        Let's chat
+      </a>
     </div>
   );
 };
