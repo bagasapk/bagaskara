@@ -120,6 +120,10 @@ a {
   align-items: center;
 }
 
+.is-flex.align-end {
+  align-items: flex-end;
+}
+
 .is-flex.around {
   justify-content: space-around;
 }
@@ -174,6 +178,10 @@ a:not(.logo):active {
   display: grid;
 }
 
+.is-grid.end{
+  align-items: flex-end;
+}
+
 .navbar .chat,.button-primary,.button-secondary {
   transition: all 0.25s ease-out;
 }
@@ -204,7 +212,7 @@ a:not(.logo):active {
   border-bottom: 2px solid #404040;
 }
 
-.home img {
+.photo img {
   width: 30vw;
   /* max-height: 40vw; */
   object-fit: cover;
@@ -214,8 +222,12 @@ a:not(.logo):active {
   -webkit-box-shadow: -1px 18px 32px 0px rgba(0, 0, 0, 0.9);
   -moz-box-shadow: -1px 18px 32px 0px rgba(0, 0, 0, 0.9);
 }
-.home img {
+.photo img {
   margin-right: 10rem;
+}
+
+.socmed i{
+  font-size: 3rem;
 }
 
 .home .desc {
@@ -282,4 +294,8 @@ a:not(.logo):active {
 .Footer .logo {
   filter: invert(1);
   width: 5rem;
+}
+
+.home .detail{
+  width: 25vw;
 }

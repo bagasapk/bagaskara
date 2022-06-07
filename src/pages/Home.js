@@ -15,22 +15,37 @@ const Home = () => {
             <span className="is-bolder">Developing Applications</span> and{" "}
             <span className="is-bolder">Machine Learning</span>.
           </p>
-          <div className="links is-flex between w-50 is-margin-block align-center">
-            <button className="is-smallest-rounded is-bigger-padding button-primary">
-              Talk with Me
-            </button>
-            <button className="is-smallest-rounded is-bigger-padding button-secondary">
-              Experiences
-            </button>
-          </div>
-          <div className="is-flex between w-75">
-            <div>
-              <h2>5</h2>
-              <p>Projects</p>
+          <div className="is-flex between">
+            <div className="detail">
+              <div className="links is-flex between is-margin-block align-center">
+                <button className="is-smallest-rounded is-bigger-padding button-primary">
+                  Talk with Me
+                </button>
+                <button className="is-smallest-rounded is-bigger-padding button-secondary">
+                  Experiences
+                </button>
+              </div>
+              <div className="is-flex between">
+                <div>
+                  <h2>5</h2>
+                  <p>Projects</p>
+                </div>
+                <div className="is-text-right">
+                  <h2>Contact</h2>
+                  <p>anugerahprima07@gmail.com</p>
+                </div>
+              </div>
             </div>
-            <div className="is-text-right">
-              <h2>Contact</h2>
-              <p>anugerahprima07@gmail.com</p>
+            <div className="socmed is-grid end">
+              <a href="https://github.com/bagasapk">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://www.instagram.com/bagasapk/">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/bagasapk/">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
             </div>
           </div>
         </div>
