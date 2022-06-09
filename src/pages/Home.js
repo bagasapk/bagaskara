@@ -7,8 +7,8 @@ const Home = () => {
       <section id="home" className="home is-flex between is-margin">
         <div className="desc w-50">
           <h1 className="is-dif-font">
-            Hi, I'm Bagas. Nice to meet you!{" "}
-            <span className="is-rounded is-padding">Frontend Developer</span>
+            Hi, I'm Bagaskara
+            <p className="is-rounded is-padding wannabe">Frontend Developer</p>
           </h1>
           <p className="w-75">
             Highly motivated and people-oriented. Passionate about{" "}
@@ -17,13 +17,17 @@ const Home = () => {
           </p>
           <div className="is-flex between">
             <div className="detail">
-              <div className="links is-flex between is-margin-block align-center">
-                <button className="is-smallest-rounded is-bigger-padding button-primary">
+              <div className="links is-flex between is-margin-block align-center is-smallest-rounded">
+                <p>Got a Project?</p>{" "}
+                {/* <button className="is-smallest-rounded is-bigger-padding button-primary">
                   Talk with Me
-                </button>
-                <button className="is-smallest-rounded is-bigger-padding button-secondary">
-                  Experiences
-                </button>
+                </button> */}
+                <a
+                  href="/#home"
+                  className="is-bolder is-bigger-padding button-secondary"
+                >
+                  Let's Talk
+                </a>
               </div>
               <div className="is-flex between">
                 <div>

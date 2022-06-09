@@ -3,9 +3,9 @@ import logo from "../images/logo.png";
 
 const Footer = () => {
   return (
-    <section className="project is-flex align-center is-padding-block around is-smaller-margin-top">
-      <div className="is-flex">
-        <div className="is-margin is-text-left">
+    <section className="project is-flex align-center is-padding-block between is-smaller-margin-top is-padding-inline">
+      <div className="list is-flex between">
+        <div className="is-text-left">
           <h2>My Projects</h2>
           <button className="button-primary is-padding is-smallest-rounded">
             Discover More
@@ -14,14 +14,18 @@ const Footer = () => {
         <div className="bar">
           <div className="is-flex between is-border-bottom-black">
             <p>ReactJs</p>
-            <p>1</p>
+            <p>4</p>
           </div>
           <div className="is-flex between is-border-bottom-black">
             <p>Laravel</p>
-            <p>1</p>
+            <p>4</p>
           </div>
           <div className="is-flex between is-border-bottom-black">
             <p>Flask</p>
+            <p>1</p>
+          </div>
+          <div className="is-flex between is-border-bottom-black">
+            <p>CodeIgniter</p>
             <p>1</p>
           </div>
         </div>
