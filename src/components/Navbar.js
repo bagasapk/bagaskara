@@ -9,9 +9,9 @@ const Navbar = () => {
           Bagaskara<span>.</span>
         </a>
       </div>
-      <ul className="is-flex around is-null">
+      {/* <ul className="is-flex around is-null">
         <li>
-          <a href="#home">Home</a>
+          <a href="/#home">Home</a>
         </li>
         <li>
           <a href="/gallery">Gallery</a>
@@ -19,8 +19,8 @@ const Navbar = () => {
         <li>
           <a href="#home">Progress</a>
         </li>
-      </ul>
-      <a className="chat is-border is-padding is-smallest-rounded" href="#home">
+      </ul> */}
+      <a className="chat is-border is-padding is-smallest-rounded" href="https://www.linkedin.com/in/bagasapk/">
         Let's chat
       </a>
     </div>

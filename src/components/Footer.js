@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../images/logo.png";
 
 const Footer = () => {
   return (
@@ -31,8 +30,8 @@ const Footer = () => {
         </div>
       </div>
       <div className="Footer is-flex around align-center">
-        <p className="is-null">©2022 Created by Anugerah Prima Bagaskara.</p>
-        <img src={logo} alt="bagasapk" className="logo"></img>
+        <p className="is-null">©2022 Created by Anugerah P. Bagaskara.</p>
+        {/* <img src={logo} alt="bagasapk" className="logo"></img> */}
       </div>
     </section>
   );
