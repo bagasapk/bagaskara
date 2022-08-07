@@ -80,7 +80,10 @@ const Home = () => {
             <span className="is-bolder">Developing Applications</span> and{" "}
             <span className="is-bolder">Machine Learning</span>.
           </p>
-          <div className="is-flex between">
+          <div className="photo">
+            <img alt="Bagaskara" src={me}></img>
+          </div>
+          <div className="detailTop is-flex between">
             <div className="detail">
               <div className="links is-flex between is-margin-block align-center is-smallest-rounded">
                 <p>Got a Project?</p>{" "}
@@ -94,7 +97,7 @@ const Home = () => {
                   Let's Talk
                 </a>
               </div>
-              <div className="is-flex between">
+              <div className="detailBot is-flex between">
                 <div>
                   <h2>5</h2>
                   <p>Projects</p>
@@ -117,9 +120,6 @@ const Home = () => {
               </a>
             </div>
           </div>
-        </div>
-        <div className="photo">
-          <img alt="Bagaskara" src={me}></img>
         </div>
       </section>
       <div className="gallery">
@@ -198,7 +198,7 @@ const Home = () => {
                           <p className="is-dif-font">{data.tech}</p>
                         </div>
                       </div>
-                      <div className="is-flex center">
+                      <div className="popDesc is-flex center">
                         <img
                           className="w-small"
                           alt={data.name}
