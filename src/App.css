@@ -669,10 +669,38 @@ a {
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1025px) and (max-width:1439px) {
   .photo img {
     margin-right: 0;
     top: calc(19vh);
     right: calc(10vw + 2px);
+    max-height: 80vh;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .photo img {
+    margin-right: 0;
+    top: calc(9vw);
+    right: calc(10vw + 2px);
+    max-width: 30vw;
+  }
+}
+
+@media only screen and (min-width: 1550px) {
+  .photo img {
+    margin-right: 0;
+    top: calc(9vw);
+    right: calc(10vw + 2px);
+    max-width: 20vw;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .photo img {
+    margin-right: 0;
+    top: calc(9vw);
+    right: calc(10vw + 2px);
+    max-width: 15vw;
   }
 }
