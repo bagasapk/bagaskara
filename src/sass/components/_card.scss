@@ -1,0 +1,89 @@
+@use "../abstracts/variables" as var;
+
+.card {
+  margin: 3rem 0;
+  gap: 2.5rem;
+  @media only screen and (max-width: 600px) {
+    justify-content: center !important;
+  }
+  @media only screen and (min-width: 601px) and (max-width: 768px) {
+    gap: 1.5rem;
+  }
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+  }
+}
+.recent {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 1rem;
+  max-width: 24.25vw;
+  img {
+    width: 24.25vw;
+    border-radius: 1rem 1rem 0 0;
+  }
+  h2 {
+    position: absolute;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    font-family: var.$font-secondary;
+    background-color: var.$sixth;
+    color: var.$second;
+    font-weight: 600;
+    border-radius: 1rem 0 1rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .recent__box {
+    padding: 1rem;
+  }
+  button {
+    margin-left: auto;
+    border-radius: 1rem;
+    font-weight: 600;
+    font-family: var.$font-primary;
+    padding: 0.5rem 2rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    img {
+      width: 90vw;
+    }
+  }
+  @media only screen and (min-width: 601px) and (max-width: 768px) {
+    max-height: fit-content;
+    min-width: 37vw;
+    img {
+      width: 37vw;
+    }
+    h2 {
+      width: 25vw;
+    }
+  }
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    max-width: 37vw;
+    img {
+      width: 37vw;
+    }
+  }
+}
+
+.datatech {
+  padding: 0.5rem 1.25rem;
+  // margin-right: 0.5rem;
+  border-radius: 1rem;
+}
+
+.datatech0 {
+  background-color: var.$sixth;
+  color: var.$second;
+}
+.datatech1 {
+  background-color: var.$seventh;
+  color: var.$second;
+}
+.datatech2 {
+  background-color: var.$eighth;
+  color: var.$second;
+}

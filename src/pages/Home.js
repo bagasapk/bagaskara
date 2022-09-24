@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import me from "../images/06.jpeg";
 import Kolektive from "../images/recent0.png";
 import Covid from "../images/recent1.png";
 import waktukita from "../images/waktukita.png";
@@ -7,6 +6,7 @@ import lnf from "../images/lnf.png";
 import mb from "../images/mb.png";
 import cuciin from "../images/cuciin.png";
 import Popup from "../components/Popup";
+import Hero from "../components/Hero";
 
 const Home = () => {
   const skills = [
@@ -23,38 +23,39 @@ const Home = () => {
       name: "Covid Cough Detection",
       type: "Deep Learning",
       tech: ["Tensorflow", "Flask"],
-      desc: "Covid Cough Detection is a website that is intended to fulfill my final project as a student at Padjadjaran University. This website can identify positive and negative covid by real-time testing. Built using the DenseNet201 architectural model and Flask as a microframework",
+      desc: "Covid Cough Detection is a website that is intended to fulfill my final project as a student at Padjadjaran University. This website can identify positive and negative covid by real-time testing. Built using the DenseNet201 architectural model and Flask as a microframework.",
       image: Covid,
+      role: "Machine Learning Engineer",
     },
     {
       name: "Kolektive",
       type: "Website",
-      tech: ["ReactJs", "Laravel"],
+      tech: ["ReactJs", "CSS", "Bootstrap"],
       desc: "Kolektive is a website intended to collect donations. The donation is intended for the organization of the event. Users can be organizers or donors.  This website is built with ReactJs framework and Laravel with agile methods.",
       image: Kolektive,
     },
     {
       name: "Intern Waktukita",
       type: "Website",
-      tech: ["ReactJs"],
+      tech: ["ReactJs", "Bootstrap", "CSS"],
       image: waktukita,
     },
     {
       name: "Lost and Found",
       type: "Website",
-      tech: ["ReactJs", "Laravel"],
+      tech: ["ReactJs", "CSS"],
       image: lnf,
     },
     {
       name: "Mipa Bersatu",
       type: "Website",
-      tech: ["Laravel"],
+      tech: ["Laravel", "Bootstrap"],
       image: mb,
     },
     {
       name: "Cuciin",
       type: "Website",
-      tech: ["Laravel"],
+      tech: ["Laravel", "PHP"],
       image: cuciin,
     },
   ];
@@ -68,60 +69,8 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <section id="home" className="home is-flex between is-margin">
-        <div className="desc w-50">
-          <h1 className="is-dif-font">
-            Hi, I'm Bagaskara
-            <p className="is-rounded is-padding wannabe">Frontend Developer</p>
-          </h1>
-          <p className="w-75">
-            Highly motivated and people-oriented. Passionate about{" "}
-            <span className="is-bolder">Developing Applications</span> and{" "}
-            <span className="is-bolder">Machine Learning</span>.
-          </p>
-          <div className="photo">
-            <img alt="Bagaskara" src={me}></img>
-          </div>
-          <div className="detailTop is-flex between">
-            <div className="detail">
-              <div className="links is-flex between is-margin-block align-center is-smallest-rounded">
-                <p>Got a Project?</p>{" "}
-                {/* <button className="is-smallest-rounded is-bigger-padding button-primary">
-                  Talk with Me
-                </button> */}
-                <a
-                  href="https://www.linkedin.com/in/bagasapk/"
-                  className="is-bolder is-bigger-padding button-third"
-                >
-                  Let's Talk
-                </a>
-              </div>
-              <div className="detailBot is-flex between">
-                <div>
-                  <h2>5</h2>
-                  <p>Projects</p>
-                </div>
-                <div className="is-text-right">
-                  <h2>Contact</h2>
-                  <p>anugerahprima07@gmail.com</p>
-                </div>
-              </div>
-            </div>
-            <div className="socmed is-grid end">
-              <a href="https://github.com/bagasapk">
-                <i class="fa-brands fa-github"></i>
-              </a>
-              <a href="https://www.instagram.com/bagasapk/">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/bagasapk/">
-                <i class="fa-brands fa-linkedin"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+    <>
+      <Hero></Hero>
       <div className="gallery">
         <section className="service is-flex is-padding-inline is-padding-block between">
           <div className="is-text-left sub_service">
@@ -164,30 +113,27 @@ const Home = () => {
         <section className="is-margin">
           <h1 className="is-bottom-null">Latest Project</h1>
           <p>Projects I've done</p>
-          <div className="is-flex between flex-wrap">
+          <div className="card is-flex between flex-wrap">
             {recent.slice(0, recent.length).map((data, key) => (
-              <div key={key} id="recent" className="is-grid is-margin-block">
-                <div className="is-border-top is-flex align-start between is-smaller-padding-block w-normal">
-                  <div className="is-text-left">
-                    <h2 className="is-null">{data.name}</h2>
-                    <p className="is-bolder">{data.type}</p>
-                    <div className="is-flex">
-                      {data.tech.map((data2, index) => (
-                        <p className={`is-dif-font datatech datatech${index}`}>
-                          {data2}
-                        </p>
-                      ))}
-                    </div>
+              <div key={key} id="recent" className="recent is-grid">
+                <img alt={data.name} src={data.image}></img>
+                <h2 className="is-null">{data.name}</h2>
+                <div className="is-text-left recent__box">
+                  <p className="is-bolder">{data.type}</p>
+                  <div className="is-flex flex-wrap gap-1">
+                    {data.tech.map((data2, index) => (
+                      <p className={`is-dif-font datatech datatech${index}`}>
+                        {data2}
+                      </p>
+                    ))}
+                    <button
+                      // href="/#home"
+                      onClick={() => togglePopup(key)}
+                    >
+                      Go
+                    </button>
                   </div>
-                  <button
-                    // href="/#home"
-                    onClick={() => togglePopup(key)}
-                    className="is-bolder is-smallest-rounded is-bigger-padding button-secondary"
-                  >
-                    Go
-                  </button>
                 </div>
-                <img className="w-small" alt={data.name} src={data.image}></img>
               </div>
             ))}
           </div>
@@ -205,22 +151,31 @@ const Home = () => {
               {recent
                 ? recent.slice(keyChosen, keyChosen + 1).map((data) => (
                     <>
-                      <div className="is-border-top is-flex align-start between is-smaller-padding-block w-normal">
-                        <div className="is-text-left">
-                          <h2 className="is-null">{data.name}</h2>
-                          <p className="is-bolder">{data.type}</p>
-                          <p className="is-dif-font">{data.tech}</p>
-                        </div>
-                      </div>
                       <div className="popDesc is-flex center">
                         <img
-                          className="w-small"
                           alt={data.name}
                           src={data.image}
                         ></img>
-                        <p className="is-smallest-margin is-text-left">
-                          {data.desc ? data.desc : "Description not found."}
-                        </p>
+                        <div className="popText">
+                          <h2 className="is-null">{data.name}</h2>
+                          <b>{data.role}</b>
+                          <p className="desc">
+                            {data.desc ? data.desc : "Description not found."}
+                          </p>
+                          <p>
+                            Category: <strong>{data.type}</strong>
+                          </p>
+                          <p className="is-dif-font">Tools:</p>
+                          <div className="is-flex gap-1">
+                            {data.tech.map((data2, index) => (
+                              <p
+                                className={`is-dif-font datatech datatech${index}`}
+                              >
+                                {data2}
+                              </p>
+                            ))}
+                          </div>
+                        </div>
                       </div>
                     </>
                   ))
@@ -230,7 +185,7 @@ const Home = () => {
           handleClose={togglePopup}
         />
       )}
-    </div>
+    </>
   );
 };
 

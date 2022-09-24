@@ -1,0 +1,9 @@
+.button-third {
+  border: none;
+  font-size: 1rem;
+  background-color: var(--color-first);
+  transition: all 0.25s ease-out;
+  &:hover {
+    transform: scale(1.2);
+  }
+}

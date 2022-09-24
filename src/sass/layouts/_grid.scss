@@ -1,0 +1,46 @@
+.is-margin {
+  margin-inline: 10rem;
+  @media only screen and (max-width: 600px) {
+    margin-inline: 1rem;
+  }
+  @media only screen and (min-width: 601px) and (max-width: 768px) {
+    margin-inline: 4rem;
+  }
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    margin-inline: 5rem;
+  }
+}
+
+.is-flex {
+  display: flex;
+  &.flex-wrap {
+    flex-wrap: wrap;
+  }
+  &.between {
+    justify-content: space-between;
+  }
+  &.align-center {
+    align-items: center;
+  }
+}
+
+.is-padding {
+  padding: 0.5rem 1.5rem;
+}
+
+.w-50 {
+  max-width: 50%;
+  @media only screen and (max-width: 600px) {
+    max-width: inherit;
+  }
+}
+.w-75 {
+  max-width: 75%;
+  @media only screen and (max-width: 600px) {
+    max-width: fit-content;
+  }
+}
+
+.gap-1{
+  gap: .5rem;
+}

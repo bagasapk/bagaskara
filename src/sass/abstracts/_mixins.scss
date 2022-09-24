@@ -1,0 +1,15 @@
+@use "../abstracts/variables";
+
+@mixin logo {
+  font-family: variables.$font-secondary;
+  font-weight: calc(variables.$weight-bold + 100);
+  font-size: 1.5rem;
+  transition: transform 0.25s;
+  &:hover {
+    transform: scale(1.2);
+  }
+  span {
+    color: variables.$third;
+    font-size: 3.5rem;
+  }
+}
