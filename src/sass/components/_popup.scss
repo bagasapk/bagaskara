@@ -30,6 +30,10 @@
     right: calc(1rem);
     top: 0;
     font-size: 3rem;
+    transition: scale 100ms ease;
+    &:hover{
+      scale: 1.2;
+    }
   }
   img {
     object-fit: cover;

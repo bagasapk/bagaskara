@@ -7,6 +7,9 @@
 @import "components/card";
 @import "components/hero";
 @import "components/popup";
+@import "components/footer";
+
+@import 'pages/home';
 
 body {
   --color-first: #f5f5f5;
@@ -65,11 +68,6 @@ a {
 
 .is-flex.around {
   justify-content: space-around;
-}
-
-.project .bar {
-  list-style: none;
-  width: 20rem;
 }
 
 .is-border-white {
@@ -198,18 +196,10 @@ a {
   background-color: var(--color-black);
 }
 
-.Footer .logo {
-  filter: invert(1);
-  width: 5rem;
-}
-
 .is-bigger-border {
   border: 2px solid var(--color-black);
 }
 
-.project .list {
-  width: 40vw;
-}
 .project button {
   background-color: var(--color-fifth);
 }
@@ -274,15 +264,8 @@ a {
   .project {
     display: block;
   }
-  .project .list {
-    width: 90vw;
-  }
   .project .list div {
     text-align: center;
-  }
-  .project .bar {
-    width: 90vw;
-    margin-block: 2rem;
   }
   .box {
     width: 75%;
@@ -310,12 +293,6 @@ a {
   }
   .is-padding-inline {
     padding-inline: 5rem;
-  }
-  .Footer {
-    width: 40%;
-  }
-  .project .list {
-    width: 45vw;
   }
   .project .bar {
     width: 7.5rem;
@@ -352,6 +329,9 @@ a {
   .w-small {
     min-width: 90%;
     width: 50%;
+  }
+  .is-padding-inline{
+    padding-inline: 5rem;
   }
 }
 

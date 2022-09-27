@@ -33,30 +33,35 @@ const Home = () => {
       tech: ["ReactJs", "CSS", "Bootstrap"],
       desc: "Kolektive is a website intended to collect donations. The donation is intended for the organization of the event. Users can be organizers or donors.  This website is built with ReactJs framework and Laravel with agile methods.",
       image: Kolektive,
+      role: "Project Manager and Frontend Developer",
     },
     {
       name: "Intern Waktukita",
       type: "Website",
       tech: ["ReactJs", "Bootstrap", "CSS"],
       image: waktukita,
+      role: "Frontend Developer",
     },
     {
       name: "Lost and Found",
       type: "Website",
       tech: ["ReactJs", "CSS"],
       image: lnf,
+      role: "Project Manager and Frontend Developer",
     },
     {
       name: "Mipa Bersatu",
       type: "Website",
       tech: ["Laravel", "Bootstrap"],
       image: mb,
+      role: "Fullstack Developer",
     },
     {
       name: "Cuciin",
       type: "Website",
       tech: ["Laravel", "PHP"],
       image: cuciin,
+      role: "Backend Developer",
     },
   ];
 
@@ -76,7 +81,7 @@ const Home = () => {
           <div className="is-text-left sub_service">
             <h2>About Me</h2>
             <div className="is-flex around">
-              <p className="is-smaller-margin-inline">___</p>
+              <p className="is-smaller-margin-inline">_</p>
               <p>
                 Computer Science graduate from Padjadjaran University who has
                 built several projects such as "Kolektive", "MIPA Bersatu 2021",
@@ -88,13 +93,12 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div>
             <div className="skills w-bigger">
               {skills.map((data, key) => (
                 <div className="is-border-white-top is-flex is-smaller-padding-block">
                   <p className="is-smaller-margin-inline">{`0${key + 1})`}</p>
-                  <div className="is-grid h-50">
-                    <h2 className="is-null w-50 is-text-left">{data.name}</h2>
+                  <div className="is-grid">
+                    <h2 className="skills__desc is-null w-50 is-text-left">{data.name}</h2>
                     <div className="is-flex align-center between w-normal">
                       <p className="is-bolder">Explore</p>
                       <a
@@ -108,7 +112,6 @@ const Home = () => {
                 </div>
               ))}
             </div>
-          </div>
         </section>
         <section className="is-margin">
           <h1 className="is-bottom-null">Latest Project</h1>
@@ -120,6 +123,7 @@ const Home = () => {
                 <h2 className="is-null">{data.name}</h2>
                 <div className="is-text-left recent__box">
                   <p className="is-bolder">{data.type}</p>
+                  <p className="is-truncate">{data.desc? data.desc : "..."}</p>
                   <div className="is-flex flex-wrap gap-1">
                     {data.tech.map((data2, index) => (
                       <p className={`is-dif-font datatech datatech${index}`}>

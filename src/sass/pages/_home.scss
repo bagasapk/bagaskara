@@ -1,0 +1,21 @@
+@use '../abstracts/variables' as var;
+
+.sub_service{
+    // padding: 4rem 0 0 0;
+    font-family: var.$font-secondary;
+    p{
+        font-style: italic;
+    }
+}
+
+.skills{
+    align-self: center;
+    .button-primary{
+        background-color: var.$fifth;
+        color: var.$first;
+        border-radius: 2rem;
+    }
+    .skills__desc{
+        padding: 1rem 0;
+    }
+}

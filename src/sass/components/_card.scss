@@ -42,13 +42,23 @@
     font-weight: 600;
     font-family: var.$font-primary;
     padding: 0.5rem 2rem;
+    transition: all 50ms ease;
     &:hover {
       cursor: pointer;
+      background-color: var.$third;
+      border: 2px solid var.$third;
+      color: var.$first;
     }
+  }
+  .is-truncate{
+    width: 21vw;
   }
   @media only screen and (max-width: 600px) {
     img {
       width: 90vw;
+    }
+    .is-truncate{
+      width: calc(90vw - 2rem);
     }
   }
   @media only screen and (min-width: 601px) and (max-width: 768px) {
@@ -56,6 +66,9 @@
     min-width: 37vw;
     img {
       width: 37vw;
+    }
+    .is-truncate{
+      width: calc(37vw - 2rem);
     }
     h2 {
       width: 25vw;
@@ -65,6 +78,9 @@
     max-width: 37vw;
     img {
       width: 37vw;
+    }
+    .is-truncate{
+      width: calc(37vw - 2rem);
     }
   }
 }

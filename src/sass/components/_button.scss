@@ -4,6 +4,12 @@
   background-color: var(--color-first);
   transition: all 0.25s ease-out;
   &:hover {
-    transform: scale(1.2);
+    scale: 1.1;
+  }
+}
+
+.button-primary {
+  &:active {
+    scale: 1.1;
   }
 }

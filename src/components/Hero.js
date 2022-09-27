@@ -50,6 +50,9 @@ const Hero = () => {
             <a href="https://www.linkedin.com/in/bagasapk/">
               <i class="fa-brands fa-linkedin"></i>
             </a>
+            <a href="https://wa.me/qr/EIJJK4I54FJGN1">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
           </div>
         </div>
       </div>
