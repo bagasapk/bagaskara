@@ -42,16 +42,16 @@ const Hero = () => {
           </div>
           <div className="socmed is-grid end">
             <a href="https://github.com/bagasapk">
-              <i class="fa-brands fa-github"></i>
+              <i className="fa-brands fa-github"></i>
             </a>
             <a href="https://www.instagram.com/bagasapk/">
-              <i class="fa-brands fa-instagram"></i>
+              <i className="fa-brands fa-instagram"></i>
             </a>
             <a href="https://www.linkedin.com/in/bagasapk/">
-              <i class="fa-brands fa-linkedin"></i>
+              <i className="fa-brands fa-linkedin"></i>
             </a>
             <a href="https://wa.me/qr/EIJJK4I54FJGN1">
-              <i class="fa-brands fa-whatsapp"></i>
+              <i className="fa-brands fa-whatsapp"></i>
             </a>
           </div>
         </div>

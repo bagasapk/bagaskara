@@ -5,11 +5,50 @@
   font-weight: calc(variables.$weight-bold + 100);
   font-size: 1.5rem;
   transition: transform 0.25s;
+  color: variables.$white;
   &:hover {
     transform: scale(1.2);
   }
-  span {
-    color: variables.$third;
-    font-size: 3.5rem;
+  &::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: variables.$yellow;
+    display: inline-block;
+    border-radius: 50%;
+  }
+}
+
+@mixin responsive($breakpoint) {
+  // $breakpoint is simply a variable that can have several values
+
+  @if $breakpoint==desktopXl {
+    @media only screen and (min-width: 1441px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==desktopLg {
+    @media only screen and (max-width: 1441px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==desktop {
+    @media only screen and (max-width: 1025px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tablet {
+    @media only screen and (max-width: 769px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==mobile {
+    @media only screen and (max-width: 600px) {
+      @content;
+    }
   }
 }

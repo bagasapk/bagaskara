@@ -1,18 +1,24 @@
-@use "../abstracts/variables";
-
 .App {
-  font-family: variables.$font-primary;
-  font-weight: variables.$weight-normal;
-  color: variables.$black;
+  font-family: $font-primary;
+  font-weight: $weight-normal;
+  color: $black;
 }
 
 h1 {
   font-size: 3.5rem;
-  font-family: variables.$font-secondary;
+  font-family: $font-secondary;
+}
+
+p {
+  font-size: 14px;
+}
+
+li {
+  font-size: 14px;
 }
 
 .is-dif-font {
-  font-family: variables.$font-secondary;
+  font-family: $font-secondary;
 }
 .is-bolder {
   font-weight: bolder;

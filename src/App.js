@@ -1,6 +1,6 @@
 import "./sass/App.scss";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import HomeV2 from "./pages/HomeV2";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 // import Home2 from "./pages/Home2";
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Navbar></Navbar>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomeV2 />} />
         {/* <Route path="/version2" element={<Home2 />} /> */}
       </Routes>
       <Footer></Footer>

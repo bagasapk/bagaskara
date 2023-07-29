@@ -44,3 +44,34 @@
 .gap-1{
   gap: .5rem;
 }
+
+.container{
+  width: 100%;
+  margin-inline: auto;
+
+  @include responsive(mobile){
+    width: calc(100% - 20px);
+    padding-inline: 10px;
+  }
+
+  @include responsive(tablet){
+    width: calc(100% - 40px);
+    padding-inline: 20px;
+  }
+
+  @include responsive(desktop){
+    max-width: 1024px;
+    width: calc(100% - 40px);
+    padding-inline: 20px;
+  }
+
+  @include responsive(desktopLg){
+    max-width: 1280px;
+    width: calc(100% - 40px);
+    padding-inline: 20px;
+  }
+
+  @include responsive(desktopXl){
+    max-width: 1280px;
+  }
+}
