@@ -80,7 +80,7 @@
 
   &__connector {
     display: none;
-    width: 25px;
+    width: 24px;
     height: 5px;
     background-color: $yellow;
     position: absolute;
@@ -93,11 +93,11 @@
     &::before,
     &::after {
       content: "";
-      width: 25px;
+      width: 24px;
       height: 5px;
       background-color: $black;
       position: absolute;
-      border-radius: 50%;
+      border-radius: 2rem;
     }
 
     &::before {

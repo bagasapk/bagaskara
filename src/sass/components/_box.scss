@@ -1,0 +1,87 @@
+.box {
+  background-color: $white;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 2rem;
+  padding: 2rem;
+
+  &__title {
+    h2 {
+      border: 1px solid $black;
+      border-radius: 2rem;
+      font-size: 14px;
+      width: fit-content;
+      padding: 5px 10px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+  }
+
+  &__content {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  &__number {
+    font-family: $font-primary;
+    font-size: 5rem;
+  }
+
+  &__buttons {
+    align-self: flex-end;
+    margin-bottom: 2rem;
+
+    @include responsive(mobile) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem 0 0 0;
+      gap: 1rem;
+    }
+
+    a {
+      border: 1px solid $black;
+      border-radius: 50%;
+      padding: 5px 5.8px;
+      margin-right: 2px;
+      background-color: $black;
+      color: $white;
+      transition: all 0.5s;
+      overflow: hidden;
+
+      &::after {
+        content: attr(data-name);
+        text-transform: capitalize;
+        padding-left: 5px;
+        transform: translateX(-100%);
+        transition: all 0.5s;
+        position: absolute;
+        z-index: -1;
+
+        @include responsive(mobile) {
+          padding-left: 10px;
+        }
+      }
+
+      &:hover {
+        border-radius: 2rem;
+        padding-right: 5rem;
+
+        &::after {
+          transform: translateX(0);
+          z-index: 0;
+        }
+      }
+    }
+  }
+
+  &__see-more {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

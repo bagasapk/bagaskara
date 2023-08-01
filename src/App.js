@@ -11,7 +11,6 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<HomeV2 />} />
-        {/* <Route path="/version2" element={<Home2 />} /> */}
       </Routes>
       <Footer></Footer>
     </div>
