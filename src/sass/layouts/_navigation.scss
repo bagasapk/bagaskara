@@ -36,6 +36,7 @@
   .logo {
     @include logo;
   }
+  
   ul {
     list-style: none;
     display: flex;
@@ -62,6 +63,8 @@
           left: 50%;
           transform: translate(-50%, 10%);
           background-color: $white;
+          border-radius: 3rem;
+          font-weight: 600;
           padding: 10px;
           color: $black;
           z-index: -1;
@@ -113,12 +116,13 @@
     position: relative;
 
     @include responsive(tablet){
-      display: none;
+      position: absolute;
+      right: 55px;      
     }
 
     span {
       display: block;
-      border: 1px solid $black;
+      border: 2px solid $black;
       border-radius: 3rem;
       color: $white;
       padding: 5px 15px;
@@ -143,6 +147,7 @@
         transform: translateX(-50px);
         color: $first;
         border-color: $yellow;
+        font-weight: 600;
       }
 
       .navbar__chat_icon {
@@ -157,6 +162,37 @@
       .navbar__connector {
         opacity: 1;
         display: block;
+      }
+    }
+  }
+
+  &--active{
+    position: relative;
+    transition: all 0.25s ease;
+
+    ul {
+      @include responsive(tablet){
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: $black;
+        padding: 0;
+        margin: 0;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+
+      li{
+        @include responsive(tablet){
+          margin-top: 10px;
+        }
+
+        &:last-child{
+          @include responsive(tablet){
+            margin-bottom: 10px;
+          }
+        }
       }
     }
   }

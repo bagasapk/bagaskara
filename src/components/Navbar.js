@@ -3,8 +3,20 @@ import { useState } from "react";
 
 const Navbar = () => {
   const [barActive, setBarActive] = useState(false);
+
+  /**
+   * @returns Initialize hamburger toggle
+   */
+  const hamburgerToggle = [];
+  // Change icon when active
+  hamburgerToggle.push(
+    <div onClick={() => setBarActive(!barActive)} className="navbar__hamburger">
+      {barActive ? <i className="fa fa-close"></i> : <i className="fa fa-bars"></i>}
+    </div>
+  );
+
   return (
-    <div className={`navbar ${barActive ? "active" : ""}`}>
+    <div className={`navbar ${barActive ? "navbar--active" : ""}`}>
       <div className="container navbar__wrapper">
         <div className="is-flex align-center">
           <a href="/#home" className="logo">
@@ -42,12 +54,7 @@ const Navbar = () => {
           <div className="navbar__connector"></div>
           <i className="fa fa-envelope navbar__chat_icon"></i>
         </a>
-        <div
-          onClick={() => setBarActive(!barActive)}
-          className="navbar__hamburger"
-        >
-          <i className="fa fa-bars"></i>
-        </div>
+        {hamburgerToggle}
       </div>
     </div>
   );
