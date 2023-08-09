@@ -1,11 +1,11 @@
 .heroV2 {
   background-color: $black;
-  min-height: 100vh;
 
   &__wrapper {
     display: grid;
     grid-template-columns: 1fr calc(100% / 12);
     column-gap: 1rem;
+    padding-bottom: 2rem;
   }
 
   &__display {
@@ -65,6 +65,11 @@
       font-weight: 600;
       color: $black;
       cursor: pointer;
+    }
+
+    span {
+      rotate: 180deg;
+      padding-bottom: 1rem;
     }
   }
 

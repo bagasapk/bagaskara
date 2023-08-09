@@ -17,7 +17,7 @@ const HeroV2 = () => {
           <img className="heroV2__other" src={other} alt="additional"></img>
         </div>
         <div className="heroV2__button">
-          <a href="/#">See Projects</a>
+          <a href="/#projects">See Projects<span className="fa fa-external-link"></span></a>
         </div>
       </div>
     </div>

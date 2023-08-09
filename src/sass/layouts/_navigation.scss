@@ -5,18 +5,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    @include responsive(mobile){
-    }
   }
 
-  &__hamburger{
+  &__hamburger {
     display: none;
     color: white;
     padding: 15px;
     font-size: 20px;
 
-    @include responsive(tablet){
+    @include responsive(tablet) {
       display: block;
     }
   }
@@ -36,7 +33,7 @@
   .logo {
     @include logo;
   }
-  
+
   ul {
     list-style: none;
     display: flex;
@@ -115,9 +112,9 @@
   &__chat {
     position: relative;
 
-    @include responsive(tablet){
+    @include responsive(tablet) {
       position: absolute;
-      right: 55px;      
+      right: 55px;
     }
 
     span {
@@ -131,6 +128,8 @@
       transition: all 0.25s ease-out;
       z-index: 2;
       position: relative;
+      font-size: 1.125rem;
+
     }
 
     &_icon {
@@ -166,12 +165,12 @@
     }
   }
 
-  &--active{
+  &--active {
     position: relative;
     transition: all 0.25s ease;
 
     ul {
-      @include responsive(tablet){
+      @include responsive(tablet) {
         display: block;
         position: absolute;
         top: 100%;
@@ -183,13 +182,13 @@
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       }
 
-      li{
-        @include responsive(tablet){
+      li {
+        @include responsive(tablet) {
           margin-top: 10px;
         }
 
-        &:last-child{
-          @include responsive(tablet){
+        &:last-child {
+          @include responsive(tablet) {
             margin-bottom: 10px;
           }
         }
