@@ -1,0 +1,121 @@
+/* Popup */
+@use "../abstracts/variables";
+
+.popup-box {
+  position: fixed;
+  background: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  .box {
+    position: relative;
+    width: 60%;
+    transform: translate(0, calc(50% - 10vh));
+    margin: 0 auto;
+    height: auto;
+    min-height: 50vh;
+    max-height: 60vh;
+    background-color: var(--color-first);
+    border-radius: 1rem;
+    // padding: 4rem 2rem;
+    overflow-y: scroll;
+    scrollbar-base-color: red;
+  }
+  .close-icon {
+    font-weight: 400;
+    cursor: pointer;
+    position: fixed;
+    right: calc(1rem);
+    top: 0;
+    font-size: 3rem;
+    transition: scale 100ms ease;
+    &:hover{
+      scale: 1.2;
+    }
+  }
+  img {
+    object-fit: cover;
+    width: 50%;
+    height: 60vh;
+    border-radius: 1rem 0 0 1rem;
+  }
+  @media only screen and (max-width: 600px) {
+    .box {
+      width: 90%;
+      transform: translate(0, 10%);
+      overflow: scroll;
+    }
+    img {
+      width: 100%;
+      height: 30vh;
+      border-radius: 1rem 1rem 0 0;
+    }
+    .close-icon {
+      background-color: white;
+      right: 0;
+      padding: 0.5rem 1rem;
+      border-radius: 0 0 0 1rem;
+      font-size: 2rem;
+    }
+  }
+  @media only screen and (min-width: 601px) and (max-width: 768px) {
+    .box {
+      width: 90%;
+      transform: translate(0, 10%);
+      overflow: scroll;
+    }
+    img {
+      width: 100%;
+      height: 50vh;
+      border-radius: 1rem 1rem 0 0;
+    }
+    .close-icon {
+      background-color: white;
+      right: 0;
+      padding: 0.5rem 1rem;
+      border-radius: 0 0 0 1rem;
+      font-size: 2rem;
+    }
+  }
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .box {
+      width: 80%;
+      transform: translate(0, 10%);
+      overflow: scroll;
+    }
+    .popDesc {
+      display: block;
+    }
+    img {
+      width: 100%;
+      height: 50vh;
+      border-radius: 1rem 1rem 0 0;
+    }
+    .close-icon {
+      background-color: white;
+      right: 0;
+      padding: 0.5rem 1rem;
+      border-radius: 0 0 0 1rem;
+      font-size: 2rem;
+    }
+  }
+}
+
+.popText {
+  padding: 3rem;
+  h2 {
+    margin-bottom: 1rem;
+  }
+  .desc {
+    font-weight: 300;
+    font-style: italic;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+  strong {
+    color: variables.$black !important;
+  }
+}

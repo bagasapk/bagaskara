@@ -1,0 +1,26 @@
+.button {
+  display: inline-block;
+  font-size: 14px;
+  padding: 1rem 4rem;
+  text-transform: uppercase;
+  border: 2px solid $black;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: $black;
+    color: $white;
+  }
+
+  &--secondary {
+    color: $green;
+    border-color: $green;
+
+    &:hover {
+      background-color: $green;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}

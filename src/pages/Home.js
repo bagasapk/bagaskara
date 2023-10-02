@@ -9,15 +9,45 @@ import Popup from "../components/Popup";
 import Hero from "../components/Hero";
 
 const Home = () => {
+  const [isOpen, setOpen] = useState(false);
+  const [keyChosen, setKey] = useState("");
+
+  /**
+   * @returns Initialize card of skills
+   */
   const skills = [
     {
       name: "Frontend Developer",
     },
-    {
-      name: "Machine Learning",
-    },
   ];
+  const skillList = [];
+  skills.map((data, key) =>
+    skillList.push(
+      <>
+        <div className="is-border-white-top is-flex is-smaller-padding-block">
+          <p className="is-smaller-margin-inline">{`0${key + 1})`}</p>
+          <div className="is-grid">
+            <h2 className="skills__desc is-null w-50 is-text-left">
+              {data.name}
+            </h2>
+            <div className="is-flex align-center between w-normal">
+              <p className="is-bolder">Explore</p>
+              <a
+                href="#recent"
+                className="is-bolder is-smallest-rounded is-bigger-padding button-primary"
+              >
+                See Projects
+              </a>
+            </div>
+          </div>
+        </div>
+      </>
+    )
+  );
 
+  /**
+   * @returns Initialize card of experiences
+   */
   const recent = [
     {
       name: "Covid Cough Detection",
@@ -64,13 +94,51 @@ const Home = () => {
       role: "Backend Developer",
     },
   ];
+  const experienceCard = [];
+  recent.map((data, key) =>
+    experienceCard.push(
+      <div key={key} id="recent" className="recent is-grid">
+        <img alt={data.name} src={data.image}></img>
+        <h2 className="is-null">{data.name}</h2>
+        <div className="is-text-left recent__box">
+          <p className="is-bolder">{data.type}</p>
+          <p className="is-truncate">{data.desc ? data.desc : "..."}</p>
+          <div className="is-flex flex-wrap gap-1">
+            {data.tech.map((data2, index) => (
+              <p
+                key={index}
+                className={`is-dif-font datatech datatech${index}`}
+              >
+                {data2}
+              </p>
+            ))}
+            <button onClick={() => togglePopup(key)}>Go</button>
+          </div>
+        </div>
+      </div>
+    )
+  );
 
-  const [isOpen, setOpen] = useState(false);
-  const [keyChosen, setKey] = useState("");
+  /**
+   * @returns Initialize popup of experiences
+   */
+  const openedPopup = [];
+  if (experienceCard.length) {
+    experienceCard.filter((data) => {
+      return openedPopup.push(
+        experienceCard.filter((data) => data.key === keyChosen)
+      );
+    });
+  }
 
+  // Open and close Popup
   const togglePopup = (key) => {
     setOpen(!isOpen);
-    setKey(key);
+    if (key) {
+      setKey(key);
+    } else {
+      setKey("");
+    }
   };
 
   return (
@@ -89,63 +157,25 @@ const Home = () => {
                 developing web applications and machine learning. Experienced
                 using ReactJs, Agile Scrum Method and became a Project Manager.
                 Eager to learn because I like to try something new. Able to work
-                either individually or in a team.
+                either individually or in a team. <br />
+                <br />
+                Detail-oriented and communicative Frontend Developer that has
+                successfully optimized 5+ professional projects in a
+                professional environment and delivered 3+ projects on campus.
+                Experienced with 2+ years of using ReactJS, also several tools
+                such as VueJS, Nuxt 3, Webpack, and many more. Implement the
+                fastest and simplest solution with always considering
+                requirements and pixel-perfect. Eager to learn something new
+                especially related to technology.
               </p>
             </div>
           </div>
-            <div className="skills w-bigger">
-              {skills.map((data, key) => (
-                <div className="is-border-white-top is-flex is-smaller-padding-block">
-                  <p className="is-smaller-margin-inline">{`0${key + 1})`}</p>
-                  <div className="is-grid">
-                    <h2 className="skills__desc is-null w-50 is-text-left">{data.name}</h2>
-                    <div className="is-flex align-center between w-normal">
-                      <p className="is-bolder">Explore</p>
-                      <a
-                        href="#recent"
-                        className="is-bolder is-smallest-rounded is-bigger-padding button-primary"
-                      >
-                        See Projects
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="skills w-bigger">{skillList}</div>
         </section>
         <section className="is-margin">
           <h1 className="is-bottom-null">Latest Project</h1>
           <p>Projects I've done</p>
-          <div className="card is-flex between flex-wrap">
-            {recent.slice(0, recent.length).map((data, key) => (
-              <div key={key} id="recent" className="recent is-grid">
-                <img alt={data.name} src={data.image}></img>
-                <h2 className="is-null">{data.name}</h2>
-                <div className="is-text-left recent__box">
-                  <p className="is-bolder">{data.type}</p>
-                  <p className="is-truncate">{data.desc? data.desc : "..."}</p>
-                  <div className="is-flex flex-wrap gap-1">
-                    {data.tech.map((data2, index) => (
-                      <p className={`is-dif-font datatech datatech${index}`}>
-                        {data2}
-                      </p>
-                    ))}
-                    <button
-                      // href="/#home"
-                      onClick={() => togglePopup(key)}
-                    >
-                      Go
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          {/* <div>
-            <button className="is-smallest-rounded is-bigger-padding button-primary">
-              Load More
-            </button>
-          </div> */}
+          <div className="card is-flex between flex-wrap">{experienceCard}</div>
         </section>
       </div>
       {isOpen && (
@@ -153,35 +183,31 @@ const Home = () => {
           content={
             <>
               {recent
-                ? recent.slice(keyChosen, keyChosen + 1).map((data) => (
-                    <>
-                      <div className="popDesc is-flex center">
-                        <img
-                          alt={data.name}
-                          src={data.image}
-                        ></img>
-                        <div className="popText">
-                          <h2 className="is-null">{data.name}</h2>
-                          <b>{data.role}</b>
-                          <p className="desc">
-                            {data.desc ? data.desc : "Description not found."}
-                          </p>
-                          <p>
-                            Category: <strong>{data.type}</strong>
-                          </p>
-                          <p className="is-dif-font">Tools:</p>
-                          <div className="is-flex gap-1">
-                            {data.tech.map((data2, index) => (
-                              <p
-                                className={`is-dif-font datatech datatech${index}`}
-                              >
-                                {data2}
-                              </p>
-                            ))}
-                          </div>
+                ? recent.slice(keyChosen, keyChosen + 1).map((data, key) => (
+                    <div key={key} className="popDesc is-flex center">
+                      <img alt={data.name} src={data.image}></img>
+                      <div className="popText">
+                        <h2 className="is-null">{data.name}</h2>
+                        <b>{data.role}</b>
+                        <p className="desc">
+                          {data.desc ? data.desc : "Description not found."}
+                        </p>
+                        <p>
+                          Category: <strong>{data.type}</strong>
+                        </p>
+                        <p className="is-dif-font">Tools:</p>
+                        <div className="is-flex gap-1">
+                          {data.tech.map((data2, index) => (
+                            <p
+                              key={index}
+                              className={`is-dif-font datatech datatech${index}`}
+                            >
+                              {data2}
+                            </p>
+                          ))}
                         </div>
                       </div>
-                    </>
+                    </div>
                   ))
                 : null}
             </>

@@ -1,0 +1,59 @@
+.carousel {
+    max-height: calc(190px);
+    padding-top: 2rem;
+    overflow: hidden;
+    position: relative;
+
+    &__wrapper{
+        display: grid;
+        gap: 1rem;
+    }
+
+    &__icon {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        color: $white;
+        left: 50%;
+        transform: translate(-50%);
+        cursor: pointer;
+        background-color: $black;
+        z-index: 2;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: $white;
+            margin-right: 1rem;
+            border-radius: 50%;
+        }
+    }
+
+    &__content {
+        color: $white;
+        border: 1px solid $white;
+        border-radius: 2rem;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &__button {
+        border-radius: 2rem;
+        background-color: $blue;
+        margin: 0;
+        color: $black;
+        padding: 5px 1rem;
+        font-weight: 600;
+    }
+}

@@ -1,0 +1,70 @@
+.footer {
+  padding: 0 3rem;
+  text-align: center;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    @include responsive(mobile) {
+      grid-template-columns: 1fr;
+      gap: 5rem;
+    }
+  }
+
+  h4 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: 0 0 2rem;
+    text-align: center;
+  }
+
+  &__logo {
+    a {
+      @include logo;
+    }
+
+    p {
+      letter-spacing: 1rem;
+    }
+  }
+
+  &__socmeds {
+    a i {
+      @include icon;
+    }
+  }
+
+  &__socmed {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: auto;
+
+    @include responsive(tablet){
+      width: 100%;
+    }
+  }
+
+  &__bar {
+    width: 50%;
+    margin: auto;
+
+    @include responsive(tablet){
+      width: 100%;
+    }
+  }
+
+  &__copyright {
+    margin-top: 1rem;
+    background-color: $green;
+    padding: 0.25rem 1rem;
+    font-weight: 500;
+    color: $white;
+
+    @include responsive(mobile) {
+      margin-top: 4rem;
+    }
+  }
+}

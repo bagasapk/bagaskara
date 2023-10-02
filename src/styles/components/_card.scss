@@ -1,0 +1,138 @@
+@use "../abstracts/variables" as var;
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+
+  @include responsive(mobile, tablet) {
+    display: flex;
+    overflow-x: scroll;
+    padding-bottom: 2rem;
+    width: 100%;
+  }
+
+  @keyframes blip {
+    0% {
+      opacity: (0);
+    }
+
+    20% {
+      opacity: (0.5);
+    }
+
+    40% {
+      opacity: (1);
+    }
+
+    60% {
+      opacity: (0.5);
+    }
+
+    80% {
+      opacity: (1);
+    }
+
+    100% {
+      opacity: (0);
+    }
+  }
+
+  .fa-arrow-right {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: $green;
+    padding: 1rem 17px;
+    border-radius: 50%;
+    color: $white;
+  }
+}
+
+.card {
+  margin-top: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  position: relative;
+  height: max-content;
+
+  @include responsive(mobile, tablet) {
+    width: 100%;
+    min-width: 256px;
+  }
+
+  &__type {
+    color: $greyDark;
+    font-size: 14px;
+  }
+
+  &__desc {
+    font-size: 14px;
+    line-height: 150%;
+  }
+
+  &__show {
+    color: $green;
+    font-weight: 600;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  &__button {
+    margin-left: auto;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    display: block;
+    text-align: right;
+    width: max-content;
+  }
+
+  &__datatech {
+    span {
+      &:first-child {
+        padding-left: 5px;
+      }
+
+      &:not(:last-child) {
+        &::after {
+          content: ",";
+        }
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  h3 {
+    margin: 1rem 0;
+    color: $black;
+    font-size: 1.2s5rem;
+  }
+
+  .card__box {
+    padding: 1rem;
+  }
+
+  button {
+    margin-left: auto;
+    border-radius: 1rem;
+    font-weight: 600;
+    font-family: var.$font-primary;
+    padding: 0.5rem 2rem;
+    transition: all 50ms ease;
+    &:hover {
+      cursor: pointer;
+      background-color: var.$third;
+      border: 2px solid var.$third;
+      color: var.$first;
+    }
+  }
+  .is-truncate {
+    width: 21vw;
+  }
+}
