@@ -1,0 +1,59 @@
+.App {
+  font-family: $font-primary;
+  font-weight: $weight-normal;
+  color: $black;
+}
+
+h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+
+  @include responsive(mobile, tablet) {
+    font-size: 2.5rem;
+  }
+}
+
+h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1rem;
+}
+
+a {
+  color: $green;
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+li {
+  font-size: 14px;
+}
+
+.is-dif-font {
+  font-family: $font-secondary;
+}
+.is-bolder {
+  font-weight: bolder;
+}
+
+.is-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+  .desc {
+    h1,
+    p {
+      max-width: calc(40% + 10vw);
+    }
+  }
+}

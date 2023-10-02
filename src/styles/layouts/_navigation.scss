@@ -1,0 +1,262 @@
+.navbar {
+  position: relative;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .fa-bars {
+    display: none;
+    padding: 1rem 17px;
+    cursor: pointer;
+
+    @include responsive(mobile) {
+      display: block;
+    }
+  }
+
+  &__logo {
+    display: block;
+    padding: 14.4px;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $black;
+  }
+
+  &__list {
+    background-color: $white;
+    z-index: 2;
+    position: absolute;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    color: $black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+
+    @include responsive(mobile) {
+      display: none;
+      transition: all 0.2s linear;
+    }
+
+    &.active {
+      @include responsive(mobile) {
+        display: block;
+        top: 80px;
+        left: unset;
+        right: 0;
+        width: 100%;
+        max-width: 320px;
+        padding-left: 0;
+        transform: translate(0);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+          rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      }
+    }
+
+    &_item {
+      position: relative;
+      font-weight: 500;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color 0.2s linear;
+      overflow: hidden;
+
+      a {
+        color: $greyDark;
+        text-decoration: none;
+        display: block;
+        padding: 1rem;
+      }
+
+      @include responsive(mobile) {
+        margin-bottom: 1rem;
+      }
+
+      &:hover {
+        color: $black;
+      }
+
+      &.active {
+        position: relative;
+
+        a {
+          color: $black;
+        }
+
+        @include responsive(mobile) {
+          max-width: calc(100% - 2rem);
+        }
+
+        &::after {
+          transform: translateX(0);
+        }
+      }
+
+      &::after {
+        content: " ";
+        position: absolute;
+        bottom: 8px;
+        left: 1rem;
+        width: 100%;
+        height: 2px;
+        background-color: $black;
+        transform: translateX(-120%);
+        transition: all 0.2s linear;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__hamburger {
+    display: none;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+
+    @include responsive(tablet) {
+      display: block;
+    }
+  }
+
+  &__separator {
+    width: 450px;
+
+    @include responsive(desktop) {
+      display: none;
+    }
+
+    @include responsive(desktopLg) {
+      width: 300px;
+    }
+  }
+
+  .logo {
+    @include logo;
+  }
+
+  &__connector {
+    display: none;
+    width: 24px;
+    height: 5px;
+    background-color: $yellow;
+    position: absolute;
+    right: 26px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 0.25s ease-in;
+
+    &::before,
+    &::after {
+      content: "";
+      width: 24px;
+      height: 5px;
+      background-color: $black;
+      position: absolute;
+      border-radius: 2rem;
+    }
+
+    &::before {
+      top: -3px;
+    }
+
+    &::after {
+      top: 3px;
+    }
+  }
+
+  &__chat {
+    position: relative;
+
+    @include responsive(tablet) {
+      position: absolute;
+      right: 55px;
+    }
+
+    span {
+      display: block;
+      border: 2px solid $black;
+      border-radius: 3rem;
+      color: $white;
+      padding: 5px 15px;
+      transform: translateX(0);
+      background-color: $black;
+      transition: all 0.25s ease-out;
+      z-index: 2;
+      position: relative;
+      font-size: 1.125rem;
+    }
+
+    &_icon {
+      display: none;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      opacity: 0;
+      transform: translateY(-50%);
+    }
+
+    &:hover {
+      span {
+        transform: translateX(-50px);
+        color: $first;
+        border-color: $yellow;
+        font-weight: 600;
+      }
+
+      .navbar__chat_icon {
+        display: block;
+        background-color: $yellow;
+        color: $black;
+        padding: 5px;
+        border-radius: 50%;
+        opacity: 1;
+      }
+
+      .navbar__connector {
+        opacity: 1;
+        display: block;
+      }
+    }
+  }
+
+  &--active {
+    position: relative;
+    transition: all 0.25s ease;
+
+    ul {
+      @include responsive(tablet) {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: $black;
+        padding: 0;
+        margin: 0;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+
+      li {
+        @include responsive(tablet) {
+          margin-top: 10px;
+        }
+
+        &:last-child {
+          @include responsive(tablet) {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,17 +1,21 @@
-import "./sass/App.scss";
-import { Routes, Route } from "react-router-dom";
-import HomeV2 from "./pages/HomeV2";
-import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-// import Home2 from "./pages/Home2";
+import NavbarV3 from "./components/navbar/NavbarV3";
+import Portfolio from "./pages/Portfolio";
+import "./styles/App.scss";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Portfolio></Portfolio>,
+    }
+  ]);
+
   return (
     <div className="App">
-      <Navbar></Navbar>
-      <Routes>
-        <Route path="/" element={<HomeV2 />} />
-      </Routes>
+      <NavbarV3 router={router}></NavbarV3>
+      <RouterProvider router={router}></RouterProvider>
       <Footer></Footer>
     </div>
   );

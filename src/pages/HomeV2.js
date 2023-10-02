@@ -1,6 +1,6 @@
 import React from "react";
 import BoxContent from "../components/BoxContent";
-import Tools from "../components/Tools";
+import Tools from "../components/tools/Tools";
 import HeroV2 from "../components/HeroV2";
 import Carousel from "../components/Carousel";
 

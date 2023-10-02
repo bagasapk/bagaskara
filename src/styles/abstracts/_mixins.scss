@@ -1,0 +1,63 @@
+@use "../abstracts/variables";
+
+@mixin logo {
+  display: block;
+  padding: 14.4px;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $black;
+}
+
+@mixin icon {
+  padding: 8px 10px;
+  border-radius: 50%;
+  margin: 0;
+  font-size: 32px;
+  color: $black;
+  background-color: $white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    animation: shakeItem 2s linear;
+    background-color: $green;
+    color: $white;
+  }
+}
+
+@mixin responsive($breakpoints...) {
+  // $breakpoint is simply a variable that can have several values
+
+  @each $breakpoint in $breakpoints {
+    @if $breakpoint==desktopXl {
+      @media only screen and (min-width: 1441px) {
+        @content;
+      }
+    }
+
+    @if $breakpoint==desktopLg {
+      @media only screen and (min-width: 1441px) {
+        @content;
+      }
+    }
+
+    @if $breakpoint==desktop {
+      @media only screen and (min-width: 1024px) and (max-width: 1440px) {
+        @content;
+      }
+    }
+
+    @if $breakpoint==tablet {
+      @media only screen and (max-width: 1024px) {
+        @content;
+      }
+    }
+
+    @if $breakpoint==mobile {
+      @media only screen and (max-width: 600px) {
+        @content;
+      }
+    }
+  }
+}

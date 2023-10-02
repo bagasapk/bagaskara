@@ -1,0 +1,7 @@
+.portfolio {
+  padding-inline: 3rem;
+
+  @include responsive(mobile) {
+    padding-inline: 2rem;
+  }
+}

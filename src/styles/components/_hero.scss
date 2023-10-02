@@ -1,0 +1,292 @@
+@use "../abstracts/variables";
+
+.home {
+  .wannabe {
+    font-size: 1.5rem;
+    color: variables.$first;
+    margin-bottom: 1rem;
+    background-color: variables.$second;
+    width: fit-content;
+  }
+  .links {
+    background-color: variables.$third;
+    color: variables.$first;
+    font-weight: 500;
+    p {
+      width: 15rem;
+      text-align: center;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .detailTop {
+      margin: 0 3rem;
+    }
+    .wannabe {
+      width: auto;
+    }
+    .desc {
+      text-align: center;
+    }
+  }
+  @media only screen and (min-width: 601px) and (max-width: 768px) {
+    .links {
+      width: 66%;
+    }
+    .desc {
+      max-width: 100%;
+    }
+  }
+}
+
+.photo {
+  img {
+    width: 27.5vw;
+    position: absolute;
+    right: calc(10rem);
+    top: calc(81px + 3rem - 2px);
+    box-shadow: -1px 18px 32px 0px rgba(0, 0, 0, 0.9);
+    -webkit-box-shadow: -1px 18px 32px 0px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: -1px 18px 32px 0px rgba(0, 0, 0, 0.9);
+    transition: 0.5s all;
+    &:hover {
+      border-top-right-radius: 5rem;
+      border-bottom-left-radius: 5rem;
+    }
+    @media only screen and (max-width: 600px) {
+      width: auto;
+      max-height: 80vw;
+      object-fit: cover;
+      position: static;
+      margin-top: 1rem;
+    }
+    @media only screen and (min-width: 601px) and (max-width: 768px) {
+      right: calc(4rem);
+    }
+    @media only screen and (min-width: 769px) and (max-width: 1024px) {
+      right: calc(5rem);
+      width: 27vw;
+    }
+    @media only screen and (min-width: 1441px) {
+      width: 27rem;
+    }
+  }
+}
+
+.links {
+  a {
+    position: relative;
+    max-width: 5vw;
+    border: 2px solid var(--color-third);
+    background-color: white;
+    transition: all 0.5s ease;
+    &:hover {
+      scale: 1.2;
+      color: variables.$second !important;
+      border-radius: 1rem;
+      border: 2px solid transparent;
+      background-color: variables.$sixth;
+    }
+    &:active {
+      scale: 1.1;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    a {
+      max-width: none;
+    }
+  }
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+
+  @include responsive(mobile) {
+    display: grid;
+  }
+
+  @keyframes shakeItem {
+    0% {
+      transform: rotate(0);
+    }
+
+    20% {
+      transform: rotate(-20deg);
+    }
+
+    40% {
+      transform: rotate(20deg);
+    }
+
+    60% {
+      transform: rotate(-20deg);
+    }
+
+    80% {
+      transform: rotate(20deg);
+    }
+
+    100% {
+      transform: rotate(0);
+    }
+  }
+
+  @keyframes highlight {
+    to {
+      background-position: 0 0;
+    }
+  }
+
+  &__row {
+    position: relative;
+    flex: 1;
+  }
+
+  &__brands {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+
+    @include responsive(mobile) {
+      width: 280px;
+      height: 280px;
+    }
+
+    @include responsive(tablet) {
+      width: 240px;
+      height: 240px;
+    }
+  }
+
+  &__brand {
+    @include icon;
+
+    &.fa-brands {
+      position: absolute;
+    }
+
+    &.fa-github {
+      top: 0;
+      left: 0;
+    }
+
+    &.fa-instagram {
+      top: 0;
+      right: 0;
+    }
+
+    &.fa-linkedin {
+      bottom: 0;
+      left: 0;
+    }
+
+    &.fa-whatsapp {
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__desc {
+    overflow: hidden;
+
+    h1 {
+      margin: 0 0 1rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+      line-height: 150%;
+      color: $greyDark;
+      margin-bottom: 3rem;
+      width: 75%;
+
+      @include responsive(mobile, tablet) {
+        width: 90%;
+      }
+    }
+
+    strong {
+      color: $black;
+      position: relative;
+      background: linear-gradient(90deg, $grey 50%, $white 50%);
+      padding-inline: 5px;
+      background-position: 100% 0;
+      background-size: 200% 100%;
+      animation: highlight 2.5s normal forwards;
+    }
+  }
+
+  &__icon {
+    margin-top: 5rem;
+
+    @include responsive(mobile) {
+      margin-top: 1rem;
+    }
+
+    i {
+      padding: 1rem 18px;
+      border: 1px solid $black;
+      border-radius: 50%;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      z-index: 2;
+      position: relative;
+      background-color: $white;
+
+      @include responsive(mobile) {
+        display: none;
+      }
+
+      &:hover {
+        animation: shakeItem 2s infinite;
+
+        + span {
+          transform: translate(0);
+        }
+      }
+    }
+
+    span {
+      padding-left: 10px;
+      transform: translate(-100%);
+      display: inline-block;
+      transition: all 0.2s linear;
+    }
+  }
+
+  &__img {
+    background: linear-gradient(to left, $white, $grey);
+    height: calc(100vh - 80px);
+    position: relative;
+
+    @include responsive(mobile) {
+      height: 50vh;
+      background: $grey;
+    }
+
+    img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      @include responsive(mobile) {
+        width: 320px;
+        height: 320px;
+      }
+
+      @include responsive(tablet) {
+        width: 256px;
+        height: 256px;
+      }
+    }
+  }
+}
