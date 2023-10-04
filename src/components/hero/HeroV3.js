@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import profile from "../../assets/images/profiles/1.png";
+import useNav from "../../hooks/useNav";
+import { NavContext } from "../../context/NavContext";
 
 const HeroV3 = () => {
   const brands = [
@@ -17,8 +19,11 @@ const HeroV3 = () => {
     )
   );
 
+  const heroRef = useNav("portfolio");
+  const { setNavbarScroll } = useContext(NavContext);
+
   return (
-    <div className="hero">
+    <section ref={heroRef} id="portfolio" className="hero">
       <div className="hero__row">
         <div className="hero__desc">
           <h1>
@@ -30,9 +35,11 @@ const HeroV3 = () => {
             using <strong>ReactJs</strong>, <strong>VueJs</strong>. Currently
             based in <strong>Indonesia</strong>.
           </p>
-          <span className="button">See Portfolio</span>
+          <span className="button" onClick={() => setNavbarScroll("projects")}>
+            See Portfolio
+          </span>
           <div className="hero__icon">
-            <i className="fa fa-arrow-down"></i>
+            <i onClick={() => setNavbarScroll("tools")} className="fa fa-arrow-down"></i>
             <span>Next - Tools</span>
           </div>
         </div>
@@ -43,7 +50,7 @@ const HeroV3 = () => {
         </div>
         <div className="hero__brands">{brandsComponent}</div>
       </div>
-    </div>
+    </section>
   );
 };
 

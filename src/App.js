@@ -1,5 +1,6 @@
 import Footer from "./components/Footer";
 import NavbarV3 from "./components/navbar/NavbarV3";
+import NavProvider from "./context/NavContext";
 import Portfolio from "./pages/Portfolio";
 import "./styles/App.scss";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -9,13 +10,15 @@ function App() {
     {
       path: "/",
       element: <Portfolio></Portfolio>,
-    }
+    },
   ]);
 
   return (
     <div className="App">
-      <NavbarV3 router={router}></NavbarV3>
-      <RouterProvider router={router}></RouterProvider>
+      <NavProvider>
+        <NavbarV3 router={router}></NavbarV3>
+        <RouterProvider router={router}></RouterProvider>
+      </NavProvider>
       <Footer></Footer>
     </div>
   );

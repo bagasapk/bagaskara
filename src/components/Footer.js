@@ -46,7 +46,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer__copyright">
-        <p className="is-null">©2022 Created by Anugerah P. Bagaskara.</p>
+        <p className="is-null">
+          ©2023 Created by <strong>Bagaskara</strong>
+        </p>
         {/* <img src={logo} alt="bagasapk" className="logo"></img> */}
       </div>
     </section>

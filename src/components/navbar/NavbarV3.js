@@ -1,18 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { NavContext } from "../../context/NavContext";
 
 const NavbarV3 = () => {
-  const [navbarActive, setNavbarActive] = useState("Portfolio");
-  const [barActive, setBarActive] = useState(false);
+  const { activeLinkId, setNavbarScroll, barActive, setBarActive } =
+    useContext(NavContext);
+
   const navbarItem = ["Portfolio", "Tools", "Projects"];
   const navbarItemComponent = [];
   navbarItem.map((data, key) =>
     navbarItemComponent.push(
       <li
         key={key}
-        className={`navbar__list_item ${navbarActive === data && "active"}`}
-        onClick={() => setNavbarActive((prev) => (prev = data))}
+        className={`navbar__list_item ${
+          activeLinkId === data.toLowerCase() && "active"
+        }`}
       >
-        <a href={`#${data === "Portfolio" ? "" : data}`}>{data}</a>
+        <span onClick={() => setNavbarScroll(data)}>{data}</span>
       </li>
     )
   );

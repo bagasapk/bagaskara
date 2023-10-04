@@ -6,6 +6,7 @@ import lnf from "../../assets/images/projects/lnf_copy.png";
 import mb from "../../assets/images/projects/mb_copy.png";
 import cuciin from "../../assets/images/projects/cuciin_copy.png";
 import Card from "../card/Card";
+import useNav from "../../hooks/useNav";
 
 const Projects = () => {
   const recentProject = [
@@ -65,15 +66,18 @@ const Projects = () => {
     experienceCard.push(<Card key={key} data={data}></Card>)
   );
 
+  const projectRef = useNav("projects");
+
   return (
-    <div id="Projects" className="projects">
+    <section ref={projectRef} id="projects" className="projects">
       <h2>Selected Project</h2>
       <p>
         <strong>Projects</strong> - Selected projects showcase, Let's discuss to
-        know more about my projects. You can contact me <a href="mailto: anugerahprima07@gmail.com">here</a>!
+        know more about my projects. You can contact me{" "}
+        <a href="mailto: anugerahprima07@gmail.com">here</a>!
       </p>
       <div className="cards">{experienceCard}</div>
-    </div>
+    </section>
   );
 };
 

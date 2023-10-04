@@ -5,6 +5,7 @@ import git from "../../assets/images/tool-list/Git-Icon-1788C.png";
 import jquery from "../../assets/images/tool-list/jquery.png";
 import figma from "../../assets/images/tool-list/400px-Figma-logo.png";
 import vuejs from "../../assets/images/tool-list/Vuejs_Logo_2.png";
+import useNav from "../../hooks/useNav";
 
 const Tools = () => {
   /**
@@ -57,8 +58,10 @@ const Tools = () => {
     return true;
   });
 
+  const toolsRef = useNav("tools");
+
   return (
-    <div id="Tools" className="tool">
+    <section ref={toolsRef} id="tools" className="tool">
       <div className="tool-list">{toolsComponent}</div>
       <div className="tool__desc">
         <h2>Behind the scenes</h2>
@@ -69,7 +72,7 @@ const Tools = () => {
           can find it on <a href="https://github.com/bagasapk">Github</a>.
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 

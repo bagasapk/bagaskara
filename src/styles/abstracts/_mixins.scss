@@ -1,4 +1,29 @@
 @use "../abstracts/variables";
+@keyframes shakeItem {
+  0% {
+    transform: rotate(0);
+  }
+
+  20% {
+    transform: rotate(-20deg);
+  }
+
+  40% {
+    transform: rotate(20deg);
+  }
+
+  60% {
+    transform: rotate(-20deg);
+  }
+
+  80% {
+    transform: rotate(20deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
 
 @mixin logo {
   display: block;
@@ -20,7 +45,7 @@
   transition: all 0.2s ease;
 
   &:hover {
-    animation: shakeItem 2s linear;
+    animation: shakeItem 2s linear !important;
     background-color: $green;
     color: $white;
   }

@@ -100,6 +100,7 @@
 .hero {
   display: flex;
   align-items: center;
+  padding-top: 80px;
 
   @include responsive(mobile) {
     display: grid;
@@ -143,10 +144,17 @@
   }
 
   &__brands {
+    @keyframes heroBrands {
+      0% {
+        transform: translate(-50%, -80%) scale(0);
+      }
+    }
+
+    animation: heroBrands 2s ease;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
     width: 400px;
     height: 400px;
 
@@ -164,28 +172,53 @@
   &__brand {
     @include icon;
 
+    @include responsive(desktop, desktopLg) {
+      font-size: 40px;
+    }
+
     &.fa-brands {
+      @keyframes heroBrandsItem {
+        0% {
+          transform: rotate(0);
+        }
+      }
+
       position: absolute;
+      transform: rotate(360deg);
+      animation: heroBrandsItem 1s ease;
     }
 
     &.fa-github {
       top: 0;
-      left: 0;
+      left: 80px;
+      
+      @include responsive(mobile,tablet){
+        left: 40px;
+      }
     }
 
     &.fa-instagram {
-      top: 0;
-      right: 0;
+      top: 60px;
+      right: 40px;
+
+      @include responsive(mobile,tablet){
+        top: 40px;
+        right: 20px;
+      }
     }
 
     &.fa-linkedin {
-      bottom: 0;
+      bottom: 20px;
       left: 0;
     }
 
     &.fa-whatsapp {
-      bottom: 0;
-      right: 0;
+      bottom: 80px;
+      right: -20px;
+
+      @include responsive(mobile,tablet){
+        bottom: 60px;
+      }
     }
   }
 
